@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación VIP</title>
+    <style>
+        body {
+            background-color: #fdf0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .contenedor {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 380px;
+            border: 3px solid #d4af37; /* Borde dorado para su estatus */
+        }
+
+        img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            height: 50px;
+            position: relative;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+
+        .btn-si {
+            background-color: #ff4d6d;
+            color: white;
+        }
+
+        .btn-no {
+            background-color: #d4af37; /* Botón dorado */
+            color: white;
+            position: absolute;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <img src="sally.gif" alt="Sally San Valentin">
+        
+        <h1>"Monse, querida: Tengo ganas de hacer caridad e invitar a comer a gente con apariencia a sueldo mínimo (como tú comprenderás)..."</h1>
+        
+        <div class="botones">
+            <button class="btn-si" onclick="aceptar()">OBVIO SÍ</button>
+            <button class="btn-no" id="btnNo" onmouseover="moverBoton()">NO, SOY DE CLASE ALTA</button>
+        </div>
+    </div>
+
+    <script>
+        function aceptar() {
+            alert("¡Sabía que aceptarías! 🥂 Nos vemos el sábado para tu ración de caridad.");
+        }
+
+        function moverBoton() {
+            const btn = document.getElementById('btnNo');
+            // Calcula posiciones aleatorias dentro de la ventana
+            const x = Math.random() * (window.innerWidth - btn.clientWidth);
+            const y = Math.random() * (window.innerHeight - btn.clientHeight);
+            
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+            btn.style.position = 'fixed';
+        }
+    </script>
+
+</body>
+</html>
